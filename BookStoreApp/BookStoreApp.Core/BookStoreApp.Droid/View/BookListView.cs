@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using BookStoreApp.ViewModel;
+using Acr.UserDialogs;
 
 namespace BookStoreApp.Droid.View
 {
@@ -18,12 +19,12 @@ namespace BookStoreApp.Droid.View
     public class BookListView : MvxActivity<BookListViewModel>
     {
 
-        protected override void OnViewModelSet()
+        
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnViewModelSet();
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.BookItemList);
-            
+            UserDialogs.Init(this);
         }
-
     }
 }

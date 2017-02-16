@@ -1816,8 +1816,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b000b
 			public const int MvxBindingTagUnique = 2131427339;
 			
-			// aapt resource value: 0x7f0b006d
-			public const int action0 = 2131427437;
+			// aapt resource value: 0x7f0b006c
+			public const int action0 = 2131427436;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int action_bar = 2131427415;
@@ -1843,8 +1843,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b0058
 			public const int action_context_bar = 2131427416;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int action_divider = 2131427441;
+			// aapt resource value: 0x7f0b0070
+			public const int action_divider = 2131427440;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1879,8 +1879,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b004d
 			public const int buttonPanel = 2131427405;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int cancel_action = 2131427438;
+			// aapt resource value: 0x7f0b006d
+			public const int cancel_action = 2131427437;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int center = 2131427371;
@@ -1894,8 +1894,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b004f
 			public const int checkbox = 2131427407;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int chronometer = 2131427444;
+			// aapt resource value: 0x7f0b0073
+			public const int chronometer = 2131427443;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int clip_horizontal = 2131427379;
@@ -1930,8 +1930,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b001c
 			public const int end = 2131427356;
 			
-			// aapt resource value: 0x7f0b0079
-			public const int end_padder = 2131427449;
+			// aapt resource value: 0x7f0b0078
+			public const int end_padder = 2131427448;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int enterAlways = 2131427364;
@@ -1975,17 +1975,17 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b003f
 			public const int image = 2131427391;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int info = 2131427448;
+			// aapt resource value: 0x7f0b0077
+			public const int info = 2131427447;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int left = 2131427375;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int line1 = 2131427442;
+			// aapt resource value: 0x7f0b0071
+			public const int line1 = 2131427441;
 			
-			// aapt resource value: 0x7f0b0076
-			public const int line3 = 2131427446;
+			// aapt resource value: 0x7f0b0075
+			public const int line3 = 2131427445;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int listMode = 2131427340;
@@ -1993,17 +1993,17 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b0041
 			public const int list_item = 2131427393;
 			
+			// aapt resource value: 0x7f0b006a
+			public const int loadingImage = 2131427434;
+			
+			// aapt resource value: 0x7f0b0068
+			public const int loadingProgressBar = 2131427432;
+			
 			// aapt resource value: 0x7f0b006b
-			public const int loadingImage = 2131427435;
+			public const int loadingProgressWheel = 2131427435;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int loadingProgressBar = 2131427433;
-			
-			// aapt resource value: 0x7f0b006c
-			public const int loadingProgressWheel = 2131427436;
-			
-			// aapt resource value: 0x7f0b0070
-			public const int media_actions = 2131427440;
+			// aapt resource value: 0x7f0b006f
+			public const int media_actions = 2131427439;
 			
 			// aapt resource value: 0x7f0b001d
 			public const int middle = 2131427357;
@@ -2013,9 +2013,6 @@ namespace BookStoreApp.Droid
 			
 			// aapt resource value: 0x7f0b0016
 			public const int multiply = 2131427350;
-			
-			// aapt resource value: 0x7f0b0066
-			public const int mvxSpinner2 = 2131427430;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int never = 2131427361;
@@ -2104,11 +2101,11 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b0014
 			public const int showTitle = 2131427348;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int snackbar_action = 2131427432;
-			
 			// aapt resource value: 0x7f0b0067
-			public const int snackbar_text = 2131427431;
+			public const int snackbar_action = 2131427431;
+			
+			// aapt resource value: 0x7f0b0066
+			public const int snackbar_text = 2131427430;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
@@ -2125,8 +2122,8 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b0031
 			public const int start = 2131427377;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int status_bar_latest_event_content = 2131427439;
+			// aapt resource value: 0x7f0b006e
+			public const int status_bar_latest_event_content = 2131427438;
 			
 			// aapt resource value: 0x7f0b0062
 			public const int submit_area = 2131427426;
@@ -2134,20 +2131,20 @@ namespace BookStoreApp.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int tabMode = 2131427342;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int text = 2131427447;
+			// aapt resource value: 0x7f0b0076
+			public const int text = 2131427446;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int text2 = 2131427445;
+			// aapt resource value: 0x7f0b0074
+			public const int text2 = 2131427444;
 			
 			// aapt resource value: 0x7f0b004a
 			public const int textSpacerNoButtons = 2131427402;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int textViewStatus = 2131427434;
+			// aapt resource value: 0x7f0b0069
+			public const int textViewStatus = 2131427433;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int time = 2131427443;
+			// aapt resource value: 0x7f0b0072
+			public const int time = 2131427442;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int title = 2131427395;

@@ -1,6 +1,8 @@
-﻿using BookStoreApp.Service.Contract;
+﻿using Acr.UserDialogs;
+using BookStoreApp.Service.Contract;
 using BookStoreApp.Service.Response;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,31 +16,46 @@ namespace BookStoreApp.ViewModel
     public class BookListViewModel : MvxViewModel
     {
         private IService _service;
-        public ObservableCollection<BookResponse> Books { get; set; }
+        private List<BookResponse> _books;
+        public List<BookResponse> Books
+        {
+            get { return _books; }
+            set
+            {
+                _books = value;
+                RaisePropertyChanged(() => Books);
+            }
+        }
         public BookListViewModel(IService service)
         {
             _service = service;
-            Books = new ObservableCollection<BookResponse>();
+            //Books = new List<BookResponse>();
+
+
+        }
+
+        public void Init()
+        {
             LoadBooks();
         }
 
-        private void LoadBooks()
+        private async void LoadBooks()
         {
-            var response = _service.GetAllBook().Result;
+            var response = await _service.GetAllBook();
             if (response.Success)
             {
-                foreach (var book in response.Data)
-                {
-                    Books.Add(book);
-                }
+                Books = response.Data;
+
             }
-            
+
         }
 
         public ICommand Add
         {
             get
             {
+
+
                 return new MvxCommand(() => ShowViewModel<BookFormViewModel>());
             }
         }

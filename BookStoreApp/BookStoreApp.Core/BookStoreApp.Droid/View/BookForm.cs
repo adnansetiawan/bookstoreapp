@@ -19,11 +19,12 @@ namespace BookStoreApp.Droid.View
     public class BookFormView : MvxActivity<BookFormViewModel>
     {
 
-        protected override void OnViewModelSet()
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnViewModelSet();
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.BookForm);
             UserDialogs.Init(this);
+
 
         }
 

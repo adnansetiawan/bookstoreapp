@@ -3,26 +3,27 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical">
-        <LinearLayout
+   <Mvx.MvxListView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               local:MvxItemTemplate="@layout/bookitem"
+               local:MvxBind="ItemsSource Books;Visibility Visibility(Books)" />
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-            <Mvx.MvxListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                local:MvxItemTemplate="@layout/bookitem"
-                local:MvxBind="ItemsSource Books" />
+           
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add"
                 android:layout_weight="1"
                 local:MvxBind="Click Add" />
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                local:MvxBind="Visibility InvertedVisibility(Books)" />
         </LinearLayout>
-    </ScrollView>
+    
 </LinearLayout>
