@@ -97,7 +97,7 @@ namespace BookStoreApp.ViewModel
                 Title = this.Title,
                 Price = this.Price,
                 Description = this.Description,
-                CategoryId = 0// SelectedCategory.Id
+                CategoryId = SelectedCategory.Id
             };
            var response = _service.CreateNewBook(bookRequest).Result;
             if (!response.Success)
