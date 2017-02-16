@@ -33,9 +33,13 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ApiInvoker.cs" />
+    <Compile Include="Service\Contract\IApiInvoker.cs" />
     <Compile Include="Service\Contract\IService.cs" />
+    <Compile Include="Service\ResponseReader.cs" />
     <Compile Include="Service\Response\BaseApiResponse.cs" />
     <Compile Include="Service\Response\BaseApiResponseObjectModel.cs" />
+    <Compile Include="Service\Response\BookRequest.cs" />
     <Compile Include="Service\Response\BookResponse.cs" />
     <Compile Include="Service\Response\CategoryResponse.cs" />
     <Compile Include="Service\Response\GetAllBookResponse.cs" />

@@ -23,6 +23,12 @@
           android:hint="Price"
           android:inputType="numberDecimal"
           local:MvxBind="Text Price" />
+        <EditText
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:hint="Description"
+         android:inputType="textMultiLine"
+         local:MvxBind="Text Description" />
         <Mvx.MvxSpinner
            android:layout_height="wrap_content"
            android:hint="Category"

@@ -31,6 +31,16 @@ namespace BookStoreApp.ViewModel
                 RaisePropertyChanged(() => Title);
             }
         }
+        private string _description;
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                _description = value;
+                RaisePropertyChanged(() => Description);
+            }
+        }
 
         private decimal _price;
         public decimal Price
@@ -66,6 +76,7 @@ namespace BookStoreApp.ViewModel
         private void Clear()
         {
             Title = string.Empty;
+            Description = string.Empty;
             
         }
     }

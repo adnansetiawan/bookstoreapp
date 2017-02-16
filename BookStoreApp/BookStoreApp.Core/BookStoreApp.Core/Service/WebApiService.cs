@@ -15,59 +15,37 @@ namespace BookStoreApp.Service
 {
     public class WebApiService : IService
     {
-        protected const string BASE_URL = "http://192.168.60.133:8181/";
+        private IApiInvoker _apiInvoker;
+        public WebApiService(IApiInvoker apiInvoker)
+        {
+            _apiInvoker = apiInvoker;
+        }
+       
+        //public void CreateNewBook(BookRequest newBook)
+        //{
+        //    var client = GetHttpClient();
+        //    HttpResponseMessage result = null;
+        //    try
+        //    {
+        //        result = client.PostAsync(@"api/Book/Create", newBook).Result;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new GetAllBookResponse { Success = false, Messages = ex.Message };
+        //    }
+        //    var content = result.Content.ReadAsStringAsync().Result;
+
+        //}
 
         public async Task<GetAllBookResponse> GetAllBook()
         {
-            var client = GetHttpClient();
-            
-                HttpResponseMessage result = null;
-                try
-                {
-                    result =  client.GetAsync(@"api/book/getall").Result;
-                }
-                catch (Exception ex)
-                {
-                    return new GetAllBookResponse { Success = false, Messages = ex.Message };
-                }
-                var content = await result.Content.ReadAsStringAsync();
-                var bookResponse = JsonConvert.DeserializeObject<GetAllBookResponse>(content);
-                return bookResponse;
-            
+            return await _apiInvoker.InvokeApi<GetAllBookResponse>(@"api/book/getall");
         }
         public async Task<GetAllCategoryResponse> GetAllCategory()
         {
-            var client = GetHttpClient();
-
-            HttpResponseMessage result = null;
-            try
-            {
-                result = client.GetAsync(@"api/category/getall").Result;
-            }
-            catch (Exception ex)
-            {
-                return new GetAllCategoryResponse { Success = false, Messages = ex.Message };
-            }
-            var content = await result.Content.ReadAsStringAsync();
-            var categoryResponse = JsonConvert.DeserializeObject<GetAllCategoryResponse>(content);
-            return categoryResponse;
-
+            return await _apiInvoker.InvokeApi<GetAllCategoryResponse>(@"api/category/getall");
         }
-        private HttpClient GetHttpClient()
-        {
-            var httpClient = new HttpClient(new NativeMessageHandler())
-            {
-                BaseAddress = new Uri(BASE_URL)
-            };
-
-
-            httpClient.DefaultRequestHeaders.Accept.Clear();
-
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            return httpClient;
-        }
-
-
+        
+        
     }
 }

@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookStoreApp.Service.Contract
 {
-    public interface IService
+    public interface IApiInvoker
     {
-        Task<GetAllBookResponse> GetAllBook();
-        Task<GetAllCategoryResponse> GetAllCategory();
-        //void CreateNewBook(BookRequest newBook);
-        
+        Task<T> InvokeApi<T>(string url) where T : BaseApiResponse;
     }
-
-
 }

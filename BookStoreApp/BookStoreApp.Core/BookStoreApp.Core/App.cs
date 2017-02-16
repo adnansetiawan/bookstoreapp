@@ -1,5 +1,6 @@
 ﻿using BookStoreApp.Service;
 using BookStoreApp.Service.Contract;
+using BookStoreApp.Service.Response;
 using BookStoreApp.ViewModel;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
@@ -16,6 +17,7 @@ namespace BookStoreApp
         public App()
         {
             Mvx.RegisterType<IService, WebApiService>();
+            Mvx.RegisterType<IApiInvoker, ApiInvoker>();
             //Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<BookViewModel>());
             //Mvx.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
         }
