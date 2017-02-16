@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using ModernHttpClient;
 using System.Net.Http.Headers;
 using System.Net.Http;
-
+using BookStoreApp.Constans;
 
 namespace BookStoreApp.Service
 {
@@ -20,30 +20,19 @@ namespace BookStoreApp.Service
         {
             _apiInvoker = apiInvoker;
         }
-       
-        //public void CreateNewBook(BookRequest newBook)
-        //{
-        //    var client = GetHttpClient();
-        //    HttpResponseMessage result = null;
-        //    try
-        //    {
-        //        result = client.PostAsync(@"api/Book/Create", newBook).Result;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return new GetAllBookResponse { Success = false, Messages = ex.Message };
-        //    }
-        //    var content = result.Content.ReadAsStringAsync().Result;
 
-        //}
+        public void CreateNewBook(BookRequest newBook)
+        {
+            _apiInvoker.InvokePostApi<CreateNewBookResponse>(UrlEndPoint.CreateNewBook, newBook);
+        }
 
         public async Task<GetAllBookResponse> GetAllBook()
         {
-            return await _apiInvoker.InvokeApi<GetAllBookResponse>(@"api/book/getall");
+            return await _apiInvoker.InvokeGetApi<GetAllBookResponse>(UrlEndPoint.GetAllBook);
         }
         public async Task<GetAllCategoryResponse> GetAllCategory()
         {
-            return await _apiInvoker.InvokeApi<GetAllCategoryResponse>(@"api/category/getall");
+            return await _apiInvoker.InvokeGetApi<GetAllCategoryResponse>(UrlEndPoint.GetAllCategory);
         }
         
         

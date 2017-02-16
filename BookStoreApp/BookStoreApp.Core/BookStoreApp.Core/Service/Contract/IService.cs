@@ -11,7 +11,7 @@ namespace BookStoreApp.Service.Contract
     {
         Task<GetAllBookResponse> GetAllBook();
         Task<GetAllCategoryResponse> GetAllCategory();
-        //void CreateNewBook(BookRequest newBook);
+        void CreateNewBook(BookRequest newBook);
         
     }
 

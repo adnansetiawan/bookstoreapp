@@ -35,7 +35,8 @@
            android:layout_width="fill_parent"
            local:MvxItemTemplate="@layout/categoryitemspinner"
            local:MvxDropDownItemTemplate="@layout/categoryitemdropdown"
-           local:MvxBind="ItemsSource Categories"/>
+           local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory"/>
+     
     
     <LinearLayout
         android:layout_width="fill_parent"

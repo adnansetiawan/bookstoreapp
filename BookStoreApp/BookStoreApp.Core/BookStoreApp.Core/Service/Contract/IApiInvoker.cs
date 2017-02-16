@@ -9,6 +9,7 @@ namespace BookStoreApp.Service.Contract
 {
     public interface IApiInvoker
     {
-        Task<T> InvokeApi<T>(string url) where T : BaseApiResponse;
+        Task<T> InvokeGetApi<T>(string url) where T : BaseApiResponse;
+        Task<T> InvokePostApi<T>(string url, object data) where T : BaseApiResponse;
     }
 }

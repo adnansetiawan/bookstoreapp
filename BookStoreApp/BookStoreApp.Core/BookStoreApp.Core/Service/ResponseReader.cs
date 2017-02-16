@@ -24,26 +24,6 @@ namespace BookStoreApp.Service
             return response;
         }
 
-        public async Task<T> InvokeApi(string ApiGetUrl)
-        {
-            using (var httpClient = GetHttpClient())
-            {
-                HttpResponseMessage result = null;
-                try
-                {
-                    result = httpClient.GetAsync(ApiGetUrl).Result;
-                }
-                catch (Exception ex)
-                {
-                    var errorInstance = (T)Activator.CreateInstance(typeof(T));
-                    errorInstance.Messages = ex.Message;
-                    errorInstance.Success = false;
-                    return errorInstance;
-                }
-                return await DeserializeResponse(result);
-            }
-        }
-
         protected HttpClient GetHttpClient()
         {
             var httpClient = new HttpClient(new NativeMessageHandler())
@@ -58,6 +38,63 @@ namespace BookStoreApp.Service
 
             return httpClient;
         }
+
+        private HttpContent CreateHttpContent(HttpClient httpClient, object data)
+        {
+            var jsonData = JsonConvert.SerializeObject(data);
+
+            var httpContent = new StringContent(jsonData);
+
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            httpClient.DefaultRequestHeaders.Accept
+                      .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            return httpContent;
+        }
+
+        public async Task<T> InvokeGetApi(string ApiGetUrl)
+        {
+            using (var httpClient = GetHttpClient())
+            {
+                HttpResponseMessage result = null;
+                try
+                {
+                    result = httpClient.GetAsync(ApiGetUrl).Result;
+                    
+                }
+                catch (Exception ex)
+                {
+                    var errorInstance = (T)Activator.CreateInstance(typeof(T));
+                    errorInstance.Messages = ex.Message;
+                    errorInstance.Success = false;
+                    return errorInstance;
+                }
+                return await DeserializeResponse(result);
+            }
+        }
+        public async Task<T> InvokePostApi(string ApiGetUrl, object data)
+        {
+            using (var httpClient = GetHttpClient())
+            {
+                HttpResponseMessage result = null;
+                try
+                {
+                    var httpContent = CreateHttpContent(httpClient, data);
+                    result = httpClient.PostAsync(ApiGetUrl, httpContent).Result;
+
+                }
+                catch (Exception ex)
+                {
+                    var errorInstance = (T)Activator.CreateInstance(typeof(T));
+                    errorInstance.Messages = ex.Message;
+                    errorInstance.Success = false;
+                    return errorInstance;
+                }
+                return await DeserializeResponse(result);
+            }
+        }
+
+      
     }
     
 }

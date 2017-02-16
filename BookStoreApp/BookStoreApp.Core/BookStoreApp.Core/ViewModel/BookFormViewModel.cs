@@ -79,5 +79,37 @@ namespace BookStoreApp.ViewModel
             Description = string.Empty;
             
         }
+
+        public ICommand Save
+        {
+            get
+            {
+                return new MvxCommand(() => AddNewBook());
+            }
+        }
+
+        private void AddNewBook()
+        {
+            var bookRequest = new BookRequest
+            {
+                 Title = this.Title,
+                 Price = this.Price,
+                 Description = this.Description,
+                 CategoryId = SelectedCategory.Id
+            };
+            _service.CreateNewBook(bookRequest);
+        }
+
+        private CategoryResponse _selectedCategory;
+        public CategoryResponse SelectedCategory
+        {
+            get { return _selectedCategory; }
+            set
+            {
+                _selectedCategory = value;
+                RaisePropertyChanged(() => SelectedCategory);
+            }
+        }
+    
     }
 }
