@@ -21,9 +21,9 @@ namespace BookStoreApp.Service
             _apiInvoker = apiInvoker;
         }
 
-        public void CreateNewBook(BookRequest newBook)
+        public async Task<CreateNewBookResponse> CreateNewBook(BookRequest newBook)
         {
-            _apiInvoker.InvokePostApi<CreateNewBookResponse>(UrlEndPoint.CreateNewBook, newBook);
+            return await _apiInvoker.InvokePostApi<CreateNewBookResponse>(UrlEndPoint.CreateNewBook, newBook);
         }
 
         public async Task<GetAllBookResponse> GetAllBook()

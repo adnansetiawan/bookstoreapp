@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using BookStoreApp.ViewModel;
+using Acr.UserDialogs;
 
 namespace BookStoreApp.Droid.View
 {
@@ -22,6 +23,7 @@ namespace BookStoreApp.Droid.View
         {
             base.OnViewModelSet();
             SetContentView(Resource.Layout.BookForm);
+            UserDialogs.Init(this);
 
         }
 

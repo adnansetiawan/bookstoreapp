@@ -1,6 +1,8 @@
-﻿using BookStoreApp.Service.Contract;
+﻿using Acr.UserDialogs;
+using BookStoreApp.Service.Contract;
 using BookStoreApp.Service.Response;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -92,12 +94,16 @@ namespace BookStoreApp.ViewModel
         {
             var bookRequest = new BookRequest
             {
-                 Title = this.Title,
-                 Price = this.Price,
-                 Description = this.Description,
-                 CategoryId = SelectedCategory.Id
+                Title = this.Title,
+                Price = this.Price,
+                Description = this.Description,
+                CategoryId = 0// SelectedCategory.Id
             };
-            _service.CreateNewBook(bookRequest);
+           var response = _service.CreateNewBook(bookRequest).Result;
+            if (!response.Success)
+            {
+                Mvx.Resolve<IUserDialogs>().ShowError(response.Messages);
+            }
         }
 
         private CategoryResponse _selectedCategory;

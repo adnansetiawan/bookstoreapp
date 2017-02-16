@@ -1,4 +1,5 @@
-﻿using BookStoreApp.Service;
+﻿using Acr.UserDialogs;
+using BookStoreApp.Service;
 using BookStoreApp.Service.Contract;
 using BookStoreApp.Service.Response;
 using BookStoreApp.ViewModel;
@@ -18,8 +19,7 @@ namespace BookStoreApp
         {
             Mvx.RegisterType<IService, WebApiService>();
             Mvx.RegisterType<IApiInvoker, ApiInvoker>();
-            //Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<BookViewModel>());
-            //Mvx.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
+            Mvx.RegisterSingleton<IUserDialogs>(UserDialogs.Instance);
         }
     }
 }
