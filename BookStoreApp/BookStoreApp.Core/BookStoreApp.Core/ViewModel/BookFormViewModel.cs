@@ -110,6 +110,13 @@ namespace BookStoreApp.ViewModel
                 RaisePropertyChanged(() => SelectedCategory);
             }
         }
-    
+
+        public ICommand BackToList
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<BookListViewModel>());
+            }
+        }
     }
 }

@@ -8,52 +8,61 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
             local:MvxBind="Text Title" />
         <EditText
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:hint="Author"
-          local:MvxBind="Text Author" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Author"
+            local:MvxBind="Text Author" />
         <EditText
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:hint="Price"
-          android:inputType="numberDecimal"
-          local:MvxBind="Text Price" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            local:MvxBind="Text Price" />
         <EditText
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:hint="Description"
-         android:inputType="textMultiLine"
-         local:MvxBind="Text Description" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            local:MvxBind="Text Description" />
         <Mvx.MvxSpinner
-           android:layout_height="wrap_content"
-           android:hint="Category"
-           android:layout_width="fill_parent"
-           local:MvxItemTemplate="@layout/categoryitemspinner"
-           local:MvxDropDownItemTemplate="@layout/categoryitemdropdown"
-           local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory"/>
-     
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:orientation="horizontal"
-        android:layout_height="fill_parent">
-        <Button
             android:layout_height="wrap_content"
-            android:text="Save"
-            local:MvxBind="Click Save"
-            android:layout_weight="1"
-            android:layout_width="wrap_content" />
-        <Button
-            android:layout_height="wrap_content"
-            android:text="Clear"
-            local:MvxBind="Click Reset"
-            android:layout_weight="1"
-            android:layout_width="wrap_content" />
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:hint="Category"
+            android:gravity="center"
+            local:MvxItemTemplate="@layout/categoryitemspinner"
+            local:MvxDropDownItemTemplate="@layout/categoryitemdropdown"
+            local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory"
+            android:id="@+id/mvxSpinner2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_height="wrap_content"
+                android:text="Save"
+                local:MvxBind="Click Save"
+                android:layout_weight="1"
+                android:layout_width="wrap_content" />
+            <Button
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                local:MvxBind="Click Reset"
+                android:layout_weight="1"
+                android:layout_width="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_height="wrap_content"
+                android:text="Back To List"
+                local:MvxBind="Click BackToList"
+                android:layout_width="match_parent" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
